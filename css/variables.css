@@ -1,0 +1,18 @@
+/* ---- Style-Guide ---- */
+:root{
+    /* Main-Color */
+    --dark-brown: #502314;
+    --light-brown: #89665B;
+    --orange-red: #D62300;
+    --yellow: #FFAA00;
+    --white: #FFFFFF;
+    --black: #333333;
+    /* Other-Color */
+    --background: #FFFCF8;
+    --button: #89665B;
+    --beige: #F0E7DD;
+    /* Font-Style */
+    --header: "TTTogether";
+    --body: "NanumSquareRound";
+    --footer: "NotoSansKR";
+}

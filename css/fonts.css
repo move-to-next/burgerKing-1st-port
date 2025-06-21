@@ -1,0 +1,7 @@
+/* ---- Web-Fonts ---- */
+/* TT-Together */
+@font-face { font-family: 'TTTogether'; src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/TTTogetherA.woff') format('woff'); font-weight: normal; font-style: normal; };
+/* Nanum-Square-Round */
+@import url("https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css");
+/* Noto-Sans-KR */
+@import url('//fonts.googleapis.com/earlyaccess/notosanskr.css');

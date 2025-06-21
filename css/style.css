@@ -1,0 +1,161 @@
+@import url(/css/reset.css);
+@import url(/css/variables.css);
+
+body{
+    background-color: var(--background);
+    margin: 0;
+}
+
+/* Class Hidden */
+/* header, */
+.slide-banner,
+.highlight-section,
+.service-section,
+.why-burgerking,
+.info-burgerking,
+.app-burgerking,
+.store-about,
+.modal-find-store-overlay,
+footer{
+    display: none;
+}
+
+/* Common-Css */
+* [class*=inner]{
+    width: 1618px;
+    margin: auto;
+}
+/* ###### HEADER ###### */
+header{
+    position: relative;
+    width: 100%;
+}
+/* #### Header-inner #### */
+header .header-inner{
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 60px;
+}
+.header-inner h1.logo{
+    height: 24px;
+}
+.header-inner h1.logo a{
+    display: inline-block;
+    background: url(/images/bg-logo.svg)no-repeat;
+    background-size: cover;
+    background-position: left center;
+    min-width: 200px;
+    height: inherit;
+    font-size: 1px;
+    margin: -1px;
+    vertical-align: top;
+}
+.header-inner .gnb-download{
+    display: flex;
+    align-items: center;
+}
+.gnb-download nav.gnb{
+    margin-right: 32px;
+}
+.gnb-download nav.gnb>ul{
+    display: flex;
+    list-style: none;
+    gap: 6px;
+}
+nav.gnb>ul>li{
+    position: relative;
+}
+nav.gnb>ul>li>a{
+    display: inline-block;
+    font-family: var(--header);
+    font-size: 24px;
+    color: var(--dark-brown);
+    padding: 25px 30px;
+}
+nav.gnb>ul>li:hover>a{
+    color: var(--orange-red);
+}
+nav.gnb>ul>li>.dropdown{
+    position: absolute;
+    display: none;
+    padding: 16px 30px;
+    background-color: var(--beige);
+    border-radius: 5px;
+}
+nav.gnb>ul>li>.dropdown.active{
+    display: block;
+}
+.dropdown>ul{
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+.dropdown>ul>li{
+    white-space: nowrap;
+}
+.dropdown>ul>li:hover>a{
+    color: var(--dark-brown);
+    opacity: 1;
+}
+.dropdown>ul>li>a{
+    display: inline-block;
+    font-family: var(--body);
+    font-size: 16px;
+    font-weight: 900;
+    color: var(--light-brown);
+    opacity: 0.8;
+    transform: scaleX(1.05);
+}
+.gnb-download .app-download{
+    display: flex;
+    align-items: center;
+    padding: 25px 36px;
+    background-color: var(--orange-red);
+    border-radius: 6px;
+}
+.app-download>span{
+    display: inline-block;
+    font-family: var(--body);
+    font-size: 24px;
+    font-weight: 900;
+    color: var(--white);
+    user-select: none;
+    margin-right: 30px;
+}
+.app-download .mobile-store{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.mobile-store .google-link{
+    position: relative;
+    width: 42px;
+    height: 42px;
+    background-color: var(--white);
+    border-radius: 50%;
+    cursor: pointer;
+}
+.mobile-store .google-link img{
+    position: absolute;
+    width: 22px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.mobile-store .apple-link{
+    position: relative;
+    width: 42px;
+    height: 42px;
+    background-color: var(--white);
+    border-radius: 50%;
+    cursor: pointer;
+}
+.mobile-store .apple-link img{
+    position: absolute;
+    width: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
