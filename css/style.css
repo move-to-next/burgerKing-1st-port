@@ -1,5 +1,6 @@
-@import url(/css/reset.css);
+@import url(/css/fonts.css);
 @import url(/css/variables.css);
+@import url(/css/reset.css);
 
 body{
     background-color: var(--background);
@@ -9,8 +10,8 @@ body{
 /* Class Hidden */
 /* header, */
 /* .slide-banner, */
-.highlight-section,
-.service-section,
+/* .highlight-section, */
+/* .service-section, */
 .why-burgerking,
 .info-burgerking,
 .app-burgerking,
@@ -20,10 +21,51 @@ footer{
     display: none;
 }
 
-/* Common-Css */
+/* ###### Common-Css ###### */
+/* #### All-Sections-Inner-Width #### */
 * [class*=inner]{
     width: 1618px;
     margin: auto;
+}
+/* #### Content-Header #### */
+.content-header{
+    margin-bottom: 16px;
+}
+.content-header>h2{
+    font-family: var(--header);
+    font-size: 36px;
+    line-height: 46px;
+    color: var(--dark-brown);
+}
+.content-header>span{
+    font-family: var(--body);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--dark-brown);
+}
+/* #### Section-Header #### */
+.section-header{
+    position: relative;
+}
+.section-header>h2{
+    font-size: 32px;
+    font-weight: 900;
+}
+.section-header>span{
+    margin-top: 14px;
+}
+.section-header>span::after{
+    content: '\F138';
+    font-family: var(--bsfont);
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 8px;
+    font-weight: 900;
+    color: var(--black);
+    margin-left: 5px;
+    padding: 4px;
+    background-color: var(--white);
+    border-radius: 50%;
 }
 
 /* ###### HEADER ###### */
@@ -221,6 +263,311 @@ li.banner-aside-list>a>img{
     height: inherit;
 }
 
+/* ###### Section::Highlight-section ###### */
+.highlight-section{
+    margin-top: 80px;
+}
+.highlight-section .highlight-section-inner{
+    display: flex;
+    gap: 28px;
+}
+/* #### Whats-New #### */
+.highlight-section-inner .whats-new{
+    flex: 1;
+    overflow: hidden;
+}
+.whats-new .content-menu{
+    display: flex;
+    gap: 10px;
+    padding: 10px 5px;
+}
+.content-menu .menu-card{
+    min-width: 325px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    border-radius: 6px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+.menu-card .menu-card-thum{
+    position: relative;
+    padding: 130px 0;
+}
+.menu-card-thum>img{
+    position: absolute;
+    max-width: 300px;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+}
+.menu-card-thum>.background{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 130px;
+    border-radius: 50%;
+    background-color: var(--beige);
+    z-index: 5;
+}
+.menu-card .menu-card-info{
+    margin-top: 20px;
+}
+.menu-card-info>*{
+    display: block;
+    font-family: var(--body);
+    color: var(--dark-brown);
+    text-align: center;
+}
+.menu-card-info>b{
+    font-size: 20px;
+    font-weight: 900;
+}
+.menu-card-info>span{
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 5px;
+}
+/* #### Kings-Film #### */
+.highlight-section-inner .kings-film{
+    flex: 1;
+}
+.kings-film .content-film{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    gap: 10px;
+}
+.content-film .content-film-main{
+    flex: 3;
+}
+.content-film-main .content-film-main-thum{
+    display: none;
+}
+.content-film-main .content-film-main-thum.active{
+    display: block;
+}
+.content-film-main-thum .video-thum{
+    position: relative;
+    width: 100%;
+    min-height: 365px;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.video-thum::before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 45px;
+    background: url(/images/btn-play.svg);
+    z-index: 100;
+}
+.video-thum>img{
+    position: absolute;
+    width: inherit;
+    height: 100%;
+    object-fit: cover;
+}
+.video-thum>.text-box{
+    position: absolute;
+    bottom: 0;
+    z-index: 100;
+    width: 100%;
+    padding: 80px 30px 25px;
+    background: linear-gradient(to bottom, transparent, #000);
+}
+.video-thum>.text-box>*{
+    display: block;
+    font-family: var(--body);
+    color: var(--white);
+}
+.video-thum>.text-box>span{
+    font-size: 18px;
+    font-weight: 500;
+}
+.video-thum>.text-box>b{
+    font-size: 32px;
+    font-weight: 700;
+    margin-top: 5px;
+}
+.content-film-main .video-youtube{
+    display: none;
+    position: relative;
+    width: 100%;
+    min-height: 365px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.video-youtube>iframe{
+    position: absolute;
+    width: inherit;
+    height: 100%;
+    object-fit: cover;
+}
+.content-film .content-film-wrap{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.content-film-wrap .film-thum{
+    position: relative;
+    width: 100%;
+    min-height: 86px;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.film-thum>img{
+    position: absolute;
+    width: inherit;
+    height: 100%;
+    object-fit: cover;
+}
 
-
-
+/* ###### Section::Highlight-section ###### */
+.service-section{
+    margin-top: 80px;
+}
+.service-section .service-section-inner{
+    display: flex;
+    gap: 28px;
+}
+/* #### Menu-Service #### */
+.service-section-inner .menu-service{
+    flex: 1;
+    display: flex;
+    gap: 12px;
+}
+.menu-service .menu-info{
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    background: url(/images/menu-info.png)no-repeat;
+    background-position: 10% center;
+    background-size: 250%;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.menu-service .menu-info::after{
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.menu-service .menu-info:hover{
+    background-size: 280%;
+}
+.menu-info *{
+    display: block;
+    font-family: var(--body);
+    color: var(--white);
+    z-index: 60;
+    user-select: none;
+}
+.menu-info span.section-text{
+    max-width: 210px;
+    margin-top: auto;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+}
+.menu-service .menu-category-wrap{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+.menu-category-wrap .menu-category-item{
+    background-color: var(--beige);
+    position: relative;
+    overflow: hidden;
+    padding: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.menu-category-item>p{
+    font-family: var(--body);
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--dark-brown);
+    margin: 0;
+    padding-bottom: 70px;
+}
+.menu-category-item>img{
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-10%, -15%);
+    max-width: 280px;
+    z-index: 66;
+}
+/* #### Other-Service #### */
+.service-section-inner .other-service{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.other-service>*{
+    flex: 1;
+    background-color: var(--dark-brown);
+    border-radius: 10px;
+    padding: 25px;
+    font-family: var(--body);
+    color: var(--white);
+    user-select: none;
+    cursor: pointer;
+}
+.other-service .section-header>span{
+    display: block;
+}
+.other-service .find-store{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.find-store>img{
+    margin-top: auto;
+}
+.other-service .delivery-service{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.delivery-service .section-header>span{
+    max-width: 315px;
+    font-size: 15px;
+    line-height: 20px;
+}
+.delivery-service .section-header>span::after{
+    display: none;
+}
+.delivery-service>.tel-number{
+    font-family: var(--header);
+    color: var(--yellow);
+    font-size: 38px;
+    margin-top: auto;
+}
+.delivery-service>.tel-number::before{
+    content: '';
+    display: inline-block;
+    background: url(/images/delivery.svg)no-repeat;
+    padding: 25px 50px;
+    transform: translateY(15px);
+}
