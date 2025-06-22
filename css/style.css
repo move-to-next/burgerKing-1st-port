@@ -13,7 +13,7 @@ body{
 /* .highlight-section, */
 /* .service-section, */
 /* .why-burgerking, */
-.info-burgerking,
+/* .info-burgerking, */
 .app-burgerking,
 .store-about,
 .modal-find-store-overlay,
@@ -656,4 +656,93 @@ a.hover-tooltip>b{
 }
 :is(.quality, .griled) a.hover-tooltip{
     background-color: var(--dark-brown);
+}
+
+/* ###### Section::Info-Burgerking ###### */
+.info-burgerking{
+    margin-top: 80px;
+}
+.info-burgerking .info-burgerking-inner{
+    position: relative;
+}
+.info-burgerking-inner .content-card-wrap{
+    display: flex;
+}
+.content-card-wrap .content-card-item{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.content-card-item .text-box>*{
+    display: block;
+    font-family: var(--body);
+    color: var(--white);
+}
+.content-card-item .text-box>b{
+    font-size: 38px;
+    font-weight: 900;
+}
+:not(.active).content-card-item .text-box>b{
+    text-align: center;
+}
+.content-card-item .text-box>b>em{
+    display: block;
+    font-style: normal;
+    font-size: 24px;
+    font-weight: 700;
+}
+.content-card-item .text-box>span{
+    display: none;
+}
+.content-card-item .card-thum{
+    display: none;
+}
+.content-card-item.info-brand{
+    background-color: var(--dark-brown);
+}
+.content-card-item.info-esg{
+    background-color: var(--orange-red);
+}
+.content-card-item.info-qsr{
+    background-color: var(--light-brown);
+}
+.content-card-item.info-award{
+    background-color: var(--yellow);
+}
+.content-card-item.info-award .text-box>*{
+    color: var(--dark-brown);
+}
+.content-card-wrap .content-card-item.active{
+    flex: 4;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    gap: 60px;
+    padding: 5px;
+    border: 1px solid #000;
+}
+.content-card-item.active .card-thum{
+    display: block;
+    position: relative;
+    max-width: 480px;
+    min-height: 480px;
+    overflow: hidden;
+}
+.content-card-item.active .card-thum>img{
+    transform: scale(2) translate(-12%, 20%);
+}
+.content-card-item.active .text-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    max-width: 300px;
+    word-break: keep-all;
+}
+.content-card-item.active .text-box>span{
+    display: inline-block;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 36px;
 }
