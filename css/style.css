@@ -12,7 +12,7 @@ body{
 /* .slide-banner, */
 /* .highlight-section, */
 /* .service-section, */
-.why-burgerking,
+/* .why-burgerking, */
 .info-burgerking,
 .app-burgerking,
 .store-about,
@@ -570,4 +570,90 @@ li.banner-aside-list>a>img{
     background: url(/images/delivery.svg)no-repeat;
     padding: 25px 50px;
     transform: translateY(15px);
+}
+
+/* ###### Section::Why-Burgerking ###### */
+.why-burgerking{
+    margin-top: 80px;
+}
+.why-burgerking .why-burgerking-inner{
+    position: relative;
+}
+.why-burgerking-inner .content-box-wrap{
+    display: flex;
+    flex-direction: column;
+}
+.content-box-wrap .content-box-items{
+    flex: 1;
+    display: flex;
+}
+.content-box-items .content-box-item{
+    flex: 1;
+    position: relative;
+    width: 100%;
+    padding-top: 25%;
+}
+.content-box-items .content-box-item::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.content-box-item>img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.content-box-item>a.hover-tooltip{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+    opacity: 0.2;
+    transition: 0.3s;
+}
+a.hover-tooltip>*{
+    display: none;
+    text-align: center;
+    font-size: 36px;
+    color: var(--white);
+}
+a.hover-tooltip>span{
+    font-family: var(--body);
+    font-weight: 900;
+}
+a.hover-tooltip>b{
+    font-family: var(--header);
+}
+.content-box-item>a.hover-tooltip:hover{
+    opacity: 1;
+}
+.content-box-item>a.hover-tooltip:hover>*{
+    display: block;
+}
+:is(.whapper, .trust) a.hover-tooltip{
+    background-color: var(--yellow);
+}
+.clean a.hover-tooltip{
+    background-color: var(--beige);
+}
+.clean a.hover-tooltip>*{
+    color: var(--dark-brown);
+}
+:is(.food, .service) a.hover-tooltip{
+    background-color: var(--orange-red);
+}
+:is(.quality, .griled) a.hover-tooltip{
+    background-color: var(--dark-brown);
 }

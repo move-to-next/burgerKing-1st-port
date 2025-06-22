@@ -2,11 +2,17 @@
 :root{
     /* Main-Color */
     --dark-brown: #502314;
+    --dark-brown-rgb: 80, 35, 20;
     --light-brown: #89665B;
+    --light-brown-rgb: 137, 102, 91;
     --orange-red: #D62300;
+    --orange-red-rgb: 214, 35, 0;
     --yellow: #FFAA00;
+    --yellow-rgb: 255, 170, 0;
     --white: #FFFFFF;
+    --white-rgb: 255, 255, 255;
     --black: #333333;
+    --black-rgb: 51, 51, 51;
     /* Other-Color */
     --background: #FFFCF8;
     --button: #89665B;
