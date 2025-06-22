@@ -8,7 +8,7 @@ body{
 
 /* Class Hidden */
 /* header, */
-.slide-banner,
+/* .slide-banner, */
 .highlight-section,
 .service-section,
 .why-burgerking,
@@ -25,10 +25,12 @@ footer{
     width: 1618px;
     margin: auto;
 }
+
 /* ###### HEADER ###### */
 header{
     position: relative;
     width: 100%;
+    z-index: 99;
 }
 /* #### Header-inner #### */
 header .header-inner{
@@ -36,7 +38,7 @@ header .header-inner{
     position: relative;
     justify-content: space-between;
     align-items: center;
-    padding-top: 60px;
+    padding-top: 30px;
 }
 .header-inner h1.logo{
     height: 24px;
@@ -159,3 +161,66 @@ nav.gnb>ul>li>.dropdown.active{
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+/* ###### Section::Slide-Banner ###### */
+.slide-banner{
+    width: 100%;
+    margin-top: 30px;
+}
+.slide-banner .slide-banner-inner{
+    display: flex;
+    gap: 26px;
+}
+/* #### Banner-Sidebar #### */
+.slide-banner-inner .banner-sidebar{
+    min-width: 300px;
+    max-height: 650px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.banner-sidebar ul.banner-sidebar-wrap{
+    list-style: none;
+    background-color: var(--dark-brown);
+}
+ul.banner-sidebar-wrap li.banner-sidebar-list{
+    text-align: center;
+    padding: 20px 0;
+    cursor: pointer;
+    border-bottom: 1px solid var(--white);
+    opacity: 50%;
+}
+li.banner-sidebar-list>span{
+    user-select: none;
+    font-family: var(--body);
+    font-size: 15px;
+    color: var(--white);
+}
+/* #### Banner-Aside #### */
+.slide-banner-inner .banner-aside{
+    overflow: hidden;
+}
+.banner-aside ul.banner-aside-wrap{
+    display: flex;
+    list-style: none;
+}
+ul.banner-aside-wrap li.banner-aside-list{
+    position: relative;
+    min-width: 1290px;
+    min-height: 650px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+li.banner-aside-list>a{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+li.banner-aside-list>a>img{
+    object-fit: cover;
+    width: inherit;
+    height: inherit;
+}
+
+
+
+
