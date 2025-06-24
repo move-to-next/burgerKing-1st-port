@@ -240,6 +240,36 @@ li.banner-sidebar-list>span{
     display: flex;
     list-style: none;
 }
+ul.banner-aside-wrap .slick-dots{
+    width: fit-content;
+    left: 50%;
+    transform: translate(-50%, -120%);
+    z-index: 200;
+    margin: 0;
+}
+.slick-dots li button{
+    background-color: rgba(var(--white-rgb), 0.6);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+.progress-bar{
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: rgba(var(--white-rgb),0.3);
+    bottom: 10px;
+}
+.progress-bar .progress-fill{
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    background-color: rgba(var(--dark-brown-rgb), 0.6);
+    transition: width 0.5s ease;
+}
+.slick-dots li.slick-active button{
+    background-color: rgba(var(--dark-brown-rgb), 0.6);
+}
 ul.banner-aside-wrap li.banner-aside-list{
     position: relative;
     min-width: 1292px;
@@ -271,13 +301,7 @@ li.banner-aside-list>a>img{
     flex: 1;
     overflow: hidden;
 }
-.whats-new .content-menu{
-    display: flex;
-    gap: 10px;
-    padding: 10px 5px;
-}
 .content-menu .menu-card{
-    min-width: 325px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -286,13 +310,18 @@ li.banner-aside-list>a>img{
     box-shadow: 0 0 8px rgba(0,0,0,0.2);
     cursor: pointer;
 }
+.content-menu .slick-track{
+    display: flex;
+    gap: 10px;
+    padding: 10px 0;
+}
 .menu-card .menu-card-thum{
     position: relative;
     padding: 130px 0;
 }
 .menu-card-thum>img{
     position: absolute;
-    max-width: 300px;
+    max-width: 250px;
     top: 48%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -303,7 +332,7 @@ li.banner-aside-list>a>img{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 130px;
+    padding: 110px;
     border-radius: 50%;
     background-color: var(--beige);
     z-index: 5;
@@ -347,12 +376,16 @@ li.banner-aside-list>a>img{
     display: block;
 }
 .content-film-main-thum .video-thum{
+    display: none;
     position: relative;
     width: 100%;
     min-height: 365px;
     border-radius: 5px;
     overflow: hidden;
     cursor: pointer;
+}
+.content-film-main-thum .video-thum.active{
+    display: block;
 }
 .video-thum::before{
     content: '';
@@ -400,6 +433,9 @@ li.banner-aside-list>a>img{
     min-height: 365px;
     border-radius: 5px;
     overflow: hidden;
+}
+.content-film-main .video-youtube.active{
+    display: block;
 }
 .video-youtube>iframe{
     position: absolute;
