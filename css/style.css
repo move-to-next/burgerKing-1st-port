@@ -7,8 +7,6 @@ body{
     margin: 0;
 }
 
-
-
 /* ###### Common-Css ###### */
 /* #### All-Sections-Inner-Width #### */
 * [class*=inner]{
@@ -63,8 +61,11 @@ body{
 /* ###### HEADER ###### */
 header{
     position: relative;
+    top: 0;
     width: 100%;
     z-index: 99;
+    background-color: var(--background);
+    z-index: 600;
 }
 /* #### Header-inner #### */
 header .header-inner{
@@ -72,7 +73,7 @@ header .header-inner{
     position: relative;
     justify-content: space-between;
     align-items: center;
-    padding-top: 30px;
+    padding: 30px 0;
 }
 .header-inner h1.logo{
     height: 24px;
@@ -221,15 +222,23 @@ nav.gnb>ul>li>.dropdown.active{
 }
 ul.banner-sidebar-wrap li.banner-sidebar-list{
     text-align: center;
+    max-height: 65px;
     padding: 20px 0;
     cursor: pointer;
-    border-bottom: 1px solid var(--white);
-    opacity: 50%;
+    border-bottom: 1px solid rgba(var(--white-rgb), 0.2);
+}
+ul.banner-sidebar-wrap li.banner-sidebar-list.active{
+    background-color: var(--light-brown);
 }
 li.banner-sidebar-list>span{
+    display: inline-block;
     user-select: none;
     font-family: var(--body);
     font-size: 15px;
+    transform: translateY(-2px);
+    color: rgba(var(--white-rgb), 0.5);
+}
+li.banner-sidebar-list.active>span{
     color: var(--white);
 }
 /* #### Banner-Aside #### */
@@ -707,6 +716,8 @@ a.hover-tooltip>b{
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    transition: 1s ease-out;
+    padding: 5px;
 }
 .content-card-item .text-box>*{
     display: block;
@@ -720,6 +731,7 @@ a.hover-tooltip>b{
 }
 .content-card-item:not(.active) .text-box>b{
     text-align: center;
+    transform: translateY(30px);
 }
 .content-card-item .text-box>b>em{
     display: block;
@@ -728,10 +740,18 @@ a.hover-tooltip>b{
     font-weight: 700;
 }
 .content-card-item .text-box>span{
-    display: none;
+    display: inline-block;
+    opacity: 0;
 }
 .content-card-item .card-thum{
-    display: none;
+    display: block;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    transform: scaleX(0.1);
+    transform-origin: left;
+    opacity: 0;
+    transition: 1s;
 }
 .content-card-item.info-brand{
     background-color: var(--dark-brown);
@@ -760,11 +780,18 @@ a.hover-tooltip>b{
 .content-card-item.active .card-thum{
     display: block;
     position: relative;
+    width: fit-content;
     max-width: 480px;
     min-height: 480px;
     overflow: hidden;
+    transform: scaleX(1);
+    opacity: 1;
+    transition: 1s;
 }
-.content-card-item.active .card-thum>img{
+.content-card-item:not(.info-brand).active .card-thum>img{
+    transform: scale(1.5) translate(-15%, -5%);
+}
+.content-card-item.info-brand.active .card-thum>img{
     transform: scale(2) translate(-12%, 20%);
 }
 .content-card-item.active .text-box{
@@ -777,9 +804,12 @@ a.hover-tooltip>b{
 }
 .content-card-item.active .text-box>span{
     display: inline-block;
+    width: 100%;
     font-size: 24px;
     font-weight: 700;
     line-height: 36px;
+    opacity: 1;
+    transition: 0.2s;
 }
 
 /* ###### Section::App-Burgerking ###### */

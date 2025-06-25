@@ -1,6 +1,40 @@
 // JQuery Slick-Slider
 $(function(){
+    $(window).scroll(function(){
+        var scrollTop = $(this).scrollTop();
+
+        if(scrollTop > 110){
+            $('header').css('position', 'fixed');
+        }
+        else{
+            $('header').css('position', 'relative');
+        }
+    })
     // Banner aside Slick-Slider
+    const syncBarSlider = function(){
+        let sideBars = document.querySelectorAll('.banner-sidebar-list');
+        let slickDots = document.querySelectorAll('.slick-dots > li');
+
+        sideBars.forEach(sidebar => {
+            sidebar.classList.remove('active');
+        })
+        slickDots.forEach((dot, index)=>{
+            if(dot.classList.contains('slick-active')){
+                console.log(index);
+                sideBars[index].classList.add('active');
+                $('.banner-sidebar-wrap').slick('slickGoTo', index);
+            }
+        })
+    };
+    const clickBarSlider = function(){
+        let sideBars = document.querySelectorAll('.banner-sidebar-list');
+
+        sideBars.forEach((sidebar, index) => {
+            sidebar.addEventListener('click',function(){
+                $('.banner-aside-wrap').slick('slickGoTo', index);
+            })
+        })
+    };
     $('.banner-aside-wrap').slick({
         slidesToShow:1,
         slidesToScroll:1,
@@ -8,10 +42,24 @@ $(function(){
         autoplay: true,
         autoplaySpeed: 3000,
         speed:500,
-        Infinite:true,
+        infinite:true,
         dots:true,
         arrows:false
     })
+    $('.banner-aside-wrap').on('afterChange', syncBarSlider);
+    clickBarSlider();
+    $('.banner-sidebar-wrap').slick({
+        vertical: true,
+        slidesToShow: 10,
+        slidesToScroll: 10,
+        infinite: false,
+        arrows: false,
+        dots: false,
+        autoplay: false,
+        verticalSwiping: true,
+        speed: 500
+    })
+
     $('.slick-dots').after('<div class="progress-bar"><div class="progress-fill"></div></div>');
     $('.banner-aside-wrap').on('afterChange', function(event, slick, currentSlide){
         let progress = ((currentSlide+1)/slick.slideCount)*100;
@@ -29,6 +77,8 @@ $(function(){
         dots:false,
         arrows:false
     })
+
+
 })
 
 // Javascript
@@ -80,26 +130,74 @@ document.addEventListener("DOMContentLoaded", function(){
 
     let filmThums = document.querySelectorAll('.film-thum');
     let mainThums = document.querySelectorAll('.content-film-main-thum');
+    mainThums.forEach((mainThum, index) => {
+        let mainVideo = mainThums[index].querySelector('.video-thum');
+        let mainYoutube = mainThums[index].querySelector('.video-youtube');
 
-    filmThums.forEach((filmThum, index)=>{
-        filmThum.addEventListener('click',function(){
-            mainThums.forEach(mainThum => {
-                mainThum.classList.remove('active');
-            })
-            mainThums[index].classList.add('active');
-
-            let mainVideo = mainThums[index].querySelector('.video-thum');
-            let mainYoutube = mainThums[index].querySelector('.video-youtube');
-            mainVideo.classList.remove('active');
-            mainYoutube.classList.remove('active');
-
-            if(mainThums[index].classList.contains('active')){
-                mainVideo.classList.add('active')
-            }
-            mainVideo.addEventListener("click",function(){
+        mainVideo.addEventListener("click",function(){
+            if(mainVideo.classList.contains('active')){
                 mainVideo.classList.remove('active');
                 mainYoutube.classList.add('active');
+            };
+        })
+        filmThums.forEach((filmThum, index)=>{
+            filmThum.addEventListener('click',function(){
+                mainThums.forEach(mainThum => {
+                    mainThum.classList.remove('active');
+                })
+                mainThums[index].classList.add('active');
+
+                mainVideo.classList.remove('active');
+                mainYoutube.classList.remove('active');
+
+                if(mainThums[index].classList.contains('active')){
+                    mainVideo.classList.add('active')
+                }
             })
         })
+
     })
-})
+
+    let infoCard = document.querySelectorAll('.content-card-item');
+    infoCard.forEach((card, index)=> {
+        card.addEventListener('mouseover',function(){
+            infoCard.forEach(el=>{
+                el.classList.remove('active');
+            });
+            infoCard[index].classList.add('active');
+        });
+    });
+
+    let btns = document.querySelectorAll('.mockup-btn>button');
+    let reviews = document.querySelectorAll('.mockup-review>div');
+    btns.forEach((btn, index)=>{
+        btn.addEventListener("click", function(){
+            reviews.forEach(review=>{
+                btn.classList.remove('active');
+                review.classList.remove('active');
+            })
+            reviews[index].classList.add('active');
+            btns[index].classList.add('active');
+        })
+    })
+
+    function syncBarSlider(){
+        let sideBars = document.querySelectorAll('.banner-sidebar-list');
+        let slickDots = document.querySelectorAll('.slick-dots > li');
+
+        sideBars.forEach(sidebar => {
+            sidebar.classList.remove('slick-active');
+        })
+        slickDots.forEach((dot, index)=>{
+            if(dot.classList.contains('slick-active')){
+                console.log(index);
+                sideBars[index].classList.add('slick-active');
+            }
+        })
+        }
+    setTimeout(syncBarSlider, 1000);
+    // 슬릭슬라이더가 스크립트 초기화보다 먼저 실행 되었기 때문에
+    // slickDots 요소 자체가 존재 X // setTimeout으로 1초뒤에
+    // 즉, 스크립트 초기화먼저 실행되고 슬릭슬라이더 실행.
+    
+});
