@@ -60,6 +60,22 @@ $(function(){
         speed: 500
     })
 
+    // Gototop Action
+    $(window).scroll(function(){
+        let scrollTop = $(this).scrollTop();
+
+        if(scrollTop > 200){
+            $('.gototop').addClass('active');
+        }
+        else{
+            $('.gototop').removeClass('active');
+        }
+    })
+
+    $('.gototop').click(function(){
+        $('html, body').animate({scrollTop: 0}, 500);
+    })
+
     $('.slick-dots').after('<div class="progress-bar"><div class="progress-fill"></div></div>');
     $('.banner-aside-wrap').on('afterChange', function(event, slick, currentSlide){
         let progress = ((currentSlide+1)/slick.slideCount)*100;
