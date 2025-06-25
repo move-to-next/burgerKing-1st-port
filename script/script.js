@@ -20,7 +20,6 @@ $(function(){
         })
         slickDots.forEach((dot, index)=>{
             if(dot.classList.contains('slick-active')){
-                console.log(index);
                 sideBars[index].classList.add('active');
                 $('.banner-sidebar-wrap').slick('slickGoTo', index);
             }
@@ -47,6 +46,19 @@ $(function(){
         arrows:false
     })
     $('.banner-aside-wrap').on('afterChange', syncBarSlider);
+
+    $('.slick-dots').after('<div class="progress-bar"><div class="progress-fill"></div></div>');
+    const timeAnimation = function(){
+        $('.progress-fill').css('width','0%').animate({width: '100%'},2000);
+    };
+    timeAnimation();
+    $('.banner-aside-wrap').on('afterChange', function(){
+        timeAnimation();
+    });
+    $('.banner-aside-wrap').on('beforeChange', function(){
+        $('.progress-fill').css('width','0%');
+    });
+
     clickBarSlider();
     $('.banner-sidebar-wrap').slick({
         vertical: true,
@@ -75,12 +87,6 @@ $(function(){
     $('.gototop').click(function(){
         $('html, body').animate({scrollTop: 0}, 500);
     })
-
-    $('.slick-dots').after('<div class="progress-bar"><div class="progress-fill"></div></div>');
-    $('.banner-aside-wrap').on('afterChange', function(event, slick, currentSlide){
-        let progress = ((currentSlide+1)/slick.slideCount)*100;
-        $('.progress-fill').css('width', progress+'%');
-    });
 
     // What's new Slick-Slider
     $('.content-menu').slick({
@@ -206,7 +212,6 @@ document.addEventListener("DOMContentLoaded", function(){
         })
         slickDots.forEach((dot, index)=>{
             if(dot.classList.contains('slick-active')){
-                console.log(index);
                 sideBars[index].classList.add('slick-active');
             }
         })
