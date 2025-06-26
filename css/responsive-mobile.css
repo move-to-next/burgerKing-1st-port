@@ -1,0 +1,470 @@
+@import url(/css/fonts.css);
+@import url(/css/variables.css);
+@import url(/css/reset.css);
+
+@media(max-width: 375px){
+    body{
+        width: 100%;
+    }
+    /* ###### Common CSS */
+    * [class*=inner]{
+        padding: 10px;
+        margin: auto;
+    }
+    .content-header{
+        line-height: 5px;
+        margin-bottom: 9px;
+    }
+    .content-header>h2{
+        font-size: 14px;
+        line-height: 14px;
+    }
+    .content-header>span{
+        font-size: 6px;
+    }
+
+    .section-header{
+        line-height: 5px;
+    }
+    .section-header>h2{
+        font-size: 12px;
+        line-height: 14px;
+    }
+    .section-header>span{
+        font-size: 5px;
+        margin-top: 5px;
+    }
+    .section-header>span::after{
+        font-size: 4px;
+        padding: 3px;
+    }
+
+    /* ###### Header ###### */
+    header .store-about{
+        display: none;
+    }
+    header .header-inner{
+        padding: 0 10px;
+        min-height: 20px;
+    }
+    .gnb-download .gnb-btn-mobile{
+        display: block;
+        width: 20px;
+        height: 20px;
+        z-index: 400;
+        background-color: transparent;
+        border: none;
+    }
+    .header-inner .header-wrap{
+        align-items: center;
+    }
+    .header-inner .header-wrap h1.logo{
+        max-height: 20px;
+    }
+    .header-inner .header-wrap h1.logo a{
+        min-width: 132px;
+        min-height: 16px;
+        transform: translateY(3px);
+    }
+    .header-inner .header-wrap .gnb-download nav.gnb{
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 90vw;
+        height: 120vh;
+        background-color: var(--white);
+        margin: 0;
+        z-index: 500;
+    }
+    .header-inner .header-wrap .gnb-download nav.gnb.active{
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 90vw;
+        height: 120vh;
+        background-color: var(--white);
+        margin: 0;
+        z-index: 500;
+    }
+    .gnb-download .app-download{
+        display: none;
+    }
+    .gnb-download nav.gnb>ul{
+        flex-direction: column;
+        background-color: var(--white);
+    }
+    nav.gnb>ul>li{
+        border-bottom: 1px solid var(--light-brown);
+    }
+    nav.gnb>ul>li>a{
+        position: relative;
+        font-family: var(--body);
+        font-size: 15px;
+        font-weight: 700;
+        display: block;
+        padding: 10px 25px;
+    }
+    :is(.story,.news)>a::after{
+        content: '\F282';
+        position: absolute;
+        right: 10%;
+        display: inline-block;
+        font-family: var(--bsfont);
+        font-size: 12px;
+    }
+    nav.gnb>ul>li>.dropdown{
+        position: relative;
+        display: block;
+        padding: 10px 25px;
+        border-top: 1px solid var(--light-brown);
+    }
+    nav.gnb>ul>li>.dropdown>ul{
+        flex-direction: column;
+        gap: 2px;
+    }
+    nav.gnb>ul>li>.dropdown>ul>li>a{
+        font-size: 10px;
+        font-weight: 800;
+        color: var(--dark-brown);
+    }
+    .gnb-download nav.gnb .gnb-mobile-top{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 25px;
+    }
+    .gnb-download nav.gnb .gnb-mobile-bottom{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 50px;
+        padding: 30px 25px;
+    }
+    .gnb-mobile-bottom .join-store{
+        padding: 0 15px;
+        border-radius: 10px;
+        cursor: pointer;
+        background-color: var(--light-brown);
+    }
+    .gnb-mobile-bottom .join-store>span{
+        font-family: var(--body);
+        font-size: 8px;
+        font-weight: 700;
+        line-height: 26px;
+        color: var(--white);
+        vertical-align:top;
+        user-select: none;
+    }
+    .gnb-mobile-bottom .sns-btns{
+        align-items: center;
+        transform: translateY(5px);
+    }
+    .gnb-mobile-bottom .sns-btns>button{
+        padding: 10px;
+    }
+    .sns-btns>button.youtube::after{
+        font-size: 16px;
+        transform: translate(12px, -50%);
+    }
+    .gnb-mobile-top h2.logo{
+        max-width: 132px;
+        max-height: 16px;
+    }
+    .gnb-mobile-top h2.logo a{
+        display: inline-block;
+        background: url(/images/bg-logo.svg)no-repeat;
+        background-size: cover;
+        background-position: left center;
+        min-width: 120px;
+        min-height: 14px;
+        height: inherit;
+        font-size: 1px;
+        margin: -1px;
+        vertical-align: top;
+    }
+    .gnb-mobile-top button.close-btn{
+        background-color: transparent;
+        border: none;
+    }
+    .gnb-mobile-top button.close-btn .bi{
+        font-size: 15px;
+    }
+    /* ###### Section::Slide-Banner ###### */
+    .slide-banner{
+        width: 100%;
+        margin-top: 0;
+    }
+    .slide-banner-inner .banner-sidebar{
+        display: none;
+    }
+    .slide-banner-inner .banner-aside{
+        width: 100%;
+    }
+
+    .banner-aside ul.banner-aside-wrap{
+        margin-bottom: 0;
+    }
+    .banner-aside ul.banner-aside-wrap .slick-dots{
+        display: none !important;
+    }
+    ul.banner-aside-wrap .slick-list .slick-track li.banner-aside-list{
+        min-width: 300px;
+        min-height: 190px;
+    }
+    ul.banner-aside-wrap .progress-bar{
+        display: none;
+    }
+    li.banner-aside-list>a{
+        height: min-content;
+    }
+    /* ###### Section::Highlight-Section ###### */
+    .highlight-section{
+        margin-top: 10px;
+    }
+    .highlight-section .highlight-section-inner{
+        flex-direction: column;
+        gap: 15px;
+    }
+    .menu-card .menu-card-thum{
+        padding: 45px 0;
+    }
+    .menu-card .menu-card-thum>img{
+        max-width: 100px;
+    }
+    .menu-card .menu-card-thum>.background{
+        padding: 48px;
+    }
+    .menu-card .menu-card-info>b{
+        font-size: 8px;
+    }
+    .menu-card .menu-card-info>span{
+        font-size: 5px;
+    }
+
+    .content-film-main .content-film-main-thum .video-thum{
+        min-height: 180px;
+    }
+    .content-film-main .content-film-main-thum .video-thum::before{
+        padding: 25px;
+        background-size: cover;
+    }
+    .video-thum .text-box{
+        padding: 10px 10px;
+    }
+    .video-thum .text-box>b{
+        font-size: 12px;
+    }
+    .video-thum .text-box>span{
+        font-size: 8px;
+    }
+    .content-film-main .content-film-main-thum .video-youtube{
+        min-height: 180px;
+    }
+    .content-film-wrap .film-thum{
+        min-height: 40px;
+    }
+    /* ###### Section::Service-Section ###### */
+    .service-section{
+        margin-top: 10px;
+    }
+    .service-section .service-section-inner{
+        flex-direction: column;
+        gap: 25px;
+    }
+    .menu-service .menu-info{
+        padding: 15px;
+        border-radius: 5px;
+    }
+    .menu-service .menu-info .section-text{
+        width: 70%;
+        word-break: keep-all;
+        font-size: 10px;
+        line-height: 14px;
+    }
+    .menu-category-wrap .menu-category-item{
+        padding: 10px;
+        border-radius: 5px;
+    }
+    .menu-category-wrap .menu-category-item>p{
+        font-size: 10px;
+        padding-bottom: 40px;
+    }
+    .menu-category-wrap .menu-category-item>img{
+        max-width: 100px;
+        transform: translate(-15%, -5%);
+    }
+    .service-section-inner .other-service{
+        gap: 5px;
+    }
+    .other-service>*{
+        padding: 15px;
+        border-radius: 5px;
+    }
+    .other-service .find-store>img{
+        max-width: 50px;
+    }
+    .delivery-service .tel-number{
+        font-size: 16px;
+    }
+    .delivery-service .tel-number::before{
+        background-size: cover;
+        padding: 7px 15px;
+        transform: translateY(3px);
+        margin-right: 5px;
+    }
+
+    /* ###### Section::Why-Burgerking ###### */
+    .why-burgerking{
+        margin-top: 15px;
+    }
+    .why-burgerking-inner .content-box-wrap{
+        display: none;
+    }
+    .why-burgerking-inner .content-box-wrap-mobile{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    .content-box-wrap-mobile .content-box-items{
+        display: flex;
+        gap: 5px;
+    }
+    .content-box-items .content-box-item{
+        border-radius: 5px;
+        overflow: hidden;
+        padding-top: 25%;
+    }
+    .content-box-item a.hover-tooltip{
+        justify-content: flex-end;
+        align-items: flex-start;
+        background-color: rgba(var(--dark-brown-rgb), 0.5);
+        padding: 10px;
+        opacity: 1;
+    }
+    .content-box-item a.hover-tooltip>*{
+        display: block;
+        font-size: 12px;
+        color: var(--white);
+    }
+    .content-box-item.bg>img{
+        width: 45%;
+        height: 100%;
+    }
+
+    /* ###### Section::Info-Burgerking ###### */
+    .info-burgerking{
+        margin-top: 15px;
+    }
+    .info-burgerking-inner .content-card-wrap{
+        display: none;
+    }
+    .info-burgerking-inner .content-slide-wrap-mobile{
+        display: block;
+    }
+    .content-slide-wrap-mobile .content-slide-item{
+        position: relative;
+    }
+    .content-slide-item .slide-thum{
+        position: relative;
+        width: 100%;
+        min-height: 220px;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    .content-slide-item .slide-thum>img{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .content-slide-item .slide-thum::after{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(var(--black-rgb), 0.6);
+    }
+    .content-slide-item .text-box{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        bottom: 0;
+        left: 0;
+        padding: 10px;
+    }
+    .content-slide-item .text-box>*{
+        color: var(--white);
+    }
+    .content-slide-item .text-box>b{
+        display: block;
+        font-size: 15px;
+    }
+    .content-slide-item .text-box>b>em{
+        display: inline-block;
+        font-weight: 400;
+        font-style: normal;
+    }
+    .content-slide-item .text-box>span{
+        font-size: 10px;
+    }
+
+    /* ###### Section::App-Burgerking ###### */
+    .app-burgerking{
+        margin-top: 4px;
+    }
+    .app-burgerking-inner .app-overview{
+        flex-direction: row;
+        padding: 10px 20px;
+    }
+    .app-overview .text-box{
+        min-width: 120px;
+    }
+    .app-overview .text-box>*{
+        display: flex;
+        text-align: left;
+    }
+    .app-overview .text-box>span{
+        font-size: 6px;
+    }
+    .app-overview .text-box>b{
+        font-size: 10px;
+        margin-top: 5px;
+    }
+    .app-overview .qrcode-applink .qrcode{
+        display: none;
+    }
+    .app-overview .qrcode-applink .applink{
+        position: relative;
+        flex-direction: row;
+        gap: 10px;
+    }
+    .app-overview .qrcode-applink .applink>*{
+        border-radius: 20px;
+    }
+    .app-overview .qrcode-applink .applink a{
+        position: relative;
+        min-width: 60px;
+        min-height: 20px;
+        padding: 0 12px;
+    }
+    .app-overview .qrcode-applink .applink a img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 60%;
+        height: 60%;
+        object-fit: contain;
+        transform: translate(12px, -7px);
+    }
+    .app-burgerking-inner .app-mockup{
+        display: none;
+    }
+
+    footer{
+        margin-top: 25px;
+    }
+    footer .footer-inner{
+        max-width: 300px;
+        flex-direction: column;
+    }
+}

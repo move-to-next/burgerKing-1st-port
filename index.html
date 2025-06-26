@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <!-- Style.css & Script.js -->
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/responsive-mobile.css">
     <script src="/script/script.js"></script>
 </head>
 
@@ -23,11 +24,18 @@
         <!-- Header -->
         <header>
             <div class="header-inner">
-                <h1 class="logo">
+                <div class="header-wrap">
+                    <h1 class="logo">
                     <a href="/index.html" class="logo-img">버거킹</a>
-                </h1>
-                <div class="gnb-download">
-                    <nav class="gnb">
+                    </h1>
+                    <div class="gnb-download">
+                        <nav class="gnb">
+                        <div class="gnb-mobile-top">
+                            <h2 class="logo">
+                                <a href="/index.html" class="logo-img">버거킹</a>
+                            </h2>     
+                            <button class="close-btn"><i class="bi bi-x-lg"></i></button>      
+                        </div>
                         <ul>
                             <li class="menu">
                                 <a href="/index.html">메뉴</a>
@@ -77,8 +85,34 @@
                                 <a href="/index.html">고객지원</a>
                             </li>
                         </ul>
-                    </nav>
-                    <div class="app-download">
+                        <div class="gnb-mobile-bottom">
+                            <div class="join-store">
+                                <span>가맹점모집</span>
+                            </div>
+                            <div class="sns-btns">
+                                <button class="instagram"
+                                    onclick="window.open('https://www.instagram.com/burgerkingkorea/','_blank')">
+                                    <span>instagram</span>
+                                </button>
+                                <button class="facebook"
+                                    onclick="window.open('https://www.facebook.com/burgerkingkorea','_blank')">
+                                    <span>facebook</span>
+                                </button>
+                                <button class="xsns" onclick="window.open('https://x.com/BurgerKing_KOR','_blank')">
+                                    <span>xsns</span>
+                                </button>
+                                <button class="youtube"
+                                    onclick="window.open('https://www.youtube.com/@burgerking_korea','_blank')">
+                                    <span>youtube</span>
+                                </button>
+                                <button class="timhortons"
+                                    onclick="window.open('https://www.tim-hortons.co.kr/WEB0100','_blank')">
+                                    <span>timhortons</span>
+                                </button>
+                            </div>
+                        </div>
+                        </nav>
+                        <div class="app-download">
                         <span>앱 다운로드</span>
                         <div class="mobile-store">
                             <a href="https://play.google.com/store/apps/details?id=kr.co.burgerkinghybrid&pli=1"
@@ -90,6 +124,8 @@
                                 <img src="/images/Apple-logo.svg" alt="앱스토어로고">
                             </a>
                         </div>
+                        </div>
+                        <button class="gnb-btn-mobile"><i class="bi bi-list"></i></button>
                     </div>
                 </div>
             </div>
@@ -474,7 +510,69 @@
                             <img src="/images/why-trust.png" alt="why버거킹 맛의 대한 신뢰">
                         </div>
                         <div class="content-box-item bg">
-                            <img src="/images/bg-icon-logo.svg" alt="">
+                            <img src="/images/bg-icon-logo.svg">
+                        </div>
+                    </div>
+                </div>
+                <div class="content-box-wrap-mobile">
+                    <div class="content-box-items">
+                        <div class="content-box-item whapper">
+                            <a href="/index.html" class="hover-tooltip">
+                                <span>버거킹의 자랑</span>
+                                <b>WHAPPER</b>
+                            </a>
+                            <img src="/images/why-whapper.png" alt="why버거킹 와퍼">
+                        </div>
+                        <div class="content-box-item griled">
+                            <a href="/index.html" class="hover-tooltip">
+                                <span>직화방식의</span>
+                                <b>PATTY</b>
+                            </a>
+                            <img src="/images/why-griled.png" alt="why버거킹 직화방식">
+                        </div>
+                    </div>
+                    <div class="content-box-items">
+                        <div class="content-box-item food">
+                            <a href="/index.html" class="hover-tooltip">
+                                <span>재료는 무조건</span>
+                                <b>FRESH</b>
+                            </a>
+                            <img src="/images/why-food.png" alt="why버거킹 신선한 원재료">
+                        </div>
+                        <div class="content-box-item quality">
+                            <a href="/index.html" class="hover-tooltip">
+                                <span>엄격한 관리의</span>
+                                <b>QUALITY</b>
+                            </a>
+                            <img src="/images/why-quality.png" alt="why버거킹 엄격한관리">
+                        </div>
+                    </div>
+                    <div class="content-box-items">
+                        <div class="content-box-item service">
+                            <a href="/index.html" class="hover-tooltip">
+                                <span>신속,정확,친절한</span>
+                                <b>SERVICE</b>
+                            </a>
+                            <img src="/images/why-service.png" alt="why버거킹 서비스">
+                        </div>
+                        <div class="content-box-item clean">
+                            <a href="/index.html" class="hover-tooltip">
+                                <span>철저한</span>
+                                <b>CLEANLINESS</b>
+                            </a>
+                            <img src="/images/why-clean.png" alt="why버거킹 청결관리">
+                        </div>
+                    </div>
+                    <div class="content-box-items">
+                        <div class="content-box-item trust">
+                            <a href="/index.html" class="hover-tooltip">
+                                <span>맛에 대한</span>
+                                <b>TRUST</b>
+                            </a>
+                            <img src="/images/why-trust.png" alt="why버거킹 맛의 대한 신뢰">
+                        </div>
+                        <div class="content-box-item bg">
+                            <img src="/images/bg-icon-logo.svg">
                         </div>
                     </div>
                 </div>
@@ -521,6 +619,44 @@
                         <div class="text-box">
                             <b>수상실적</b>
                             <span>1984년 한국 진출 이후<br>성장해온 버거킹 코리아</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-slide-wrap-mobile">
+                    <div class="content-slide-item info-brand active">
+                        <div class="slide-thum">
+                            <img src="/images/story-brand.png" alt="브랜드 스토리 이미지">
+                        </div>
+                        <div class="text-box">
+                            <b>BRAND</b>
+                            <span>Since 1954, 전 세계 고객에게 사랑받는 글로벌 브랜드 버거킹!</span>
+                        </div>
+                    </div>
+                    <div class="content-slide-item info-esg">
+                        <div class="slide-thum">
+                            <img src="/images/esg-manage.jpg" alt="브랜드 스토리 이미지">
+                        </div>
+                        <div class="text-box">
+                            <b>ESG <em>Management</em></b>
+                            <span>지속 가능한 사회를 위한 버거킹의 노력</span>
+                        </div>
+                    </div>
+                    <div class="content-slide-item info-qsr">
+                        <div class="slide-thum">
+                            <img src="/images/smart-qsr.png" alt="브랜드 스토리 이미지">
+                        </div>
+                        <div class="text-box">
+                            <b><em>SMART</em> QSR</b>
+                            <span>최상의 고객 경험을 제공하는 똑똑한 QSR</span>
+                        </div>
+                    </div>
+                    <div class="content-slide-item info-award">
+                        <div class="slide-thum">
+                            <img src="/images/award.png" alt="브랜드 스토리 이미지">
+                        </div>
+                        <div class="text-box">
+                            <b>수상실적</b>
+                            <span>1984년 한국 진출 이후 성장해온 버거킹 코리아</span>
                         </div>
                     </div>
                 </div>

@@ -10,6 +10,18 @@ $(function(){
             $('header').css('position', 'relative');
         }
     })
+    $(window).resize(function(){
+        if($(window).innerWidth() < 374){
+            $('.gnb-btn-mobile').click(function(){
+                console.log('ㅋㅋㅋㅋㅋ');
+            })
+        }
+        else if($(window).innerWidth() > 374){
+            $('.gnb-btn-mobile').click(function(){
+                console.log('ㅋㅋㅋㅋㅋ');
+            })
+        }
+    }).resize();
     // Banner aside Slick-Slider
     const syncBarSlider = function(){
         let sideBars = document.querySelectorAll('.banner-sidebar-list');
@@ -43,13 +55,14 @@ $(function(){
         speed:500,
         infinite:true,
         dots:true,
-        arrows:false
+        arrows:false,
+        adaptiveHeight: true
     })
     $('.banner-aside-wrap').on('afterChange', syncBarSlider);
 
     $('.slick-dots').after('<div class="progress-bar"><div class="progress-fill"></div></div>');
     const timeAnimation = function(){
-        $('.progress-fill').css('width','0%').animate({width: '100%'},2000);
+        $('.progress-fill').css('width','0%').animate({width: '100%'},3000);
     };
     timeAnimation();
     $('.banner-aside-wrap').on('afterChange', function(){
@@ -100,7 +113,14 @@ $(function(){
         arrows:false
     })
 
-
+    $('.content-slide-wrap-mobile').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        speed:500,
+        infinite:true
+    })
 })
 
 // Javascript
@@ -216,7 +236,7 @@ document.addEventListener("DOMContentLoaded", function(){
             }
         })
         }
-    setTimeout(syncBarSlider, 1000);
+    setTimeout(syncBarSlider, 500);
     // 슬릭슬라이더가 스크립트 초기화보다 먼저 실행 되었기 때문에
     // slickDots 요소 자체가 존재 X // setTimeout으로 1초뒤에
     // 즉, 스크립트 초기화먼저 실행되고 슬릭슬라이더 실행.
