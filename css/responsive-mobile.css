@@ -2,7 +2,7 @@
 @import url(/css/variables.css);
 @import url(/css/reset.css);
 
-@media(max-width: 375px){
+@media(min-width: 375px) and (max-width: 767px){
     body{
         width: 100%;
     }
@@ -506,6 +506,10 @@
     .app-burgerking{
         margin-top: 4px;
     }
+    .app-burgerking .app-burgerking-inner{
+        display: block;
+        width: 100%;
+    }
     .app-burgerking-inner .app-overview{
         flex-direction: row;
         padding: 10px 20px;
@@ -630,7 +634,8 @@
         height: 100%;
         background-color: rgba(0, 0, 0, 0.3);
         z-index: 500;
-        max-width: 375px;
+        min-width: 375px;
+        max-width: 767px;
         overflow: hidden;
     }
     .modal-find-store-overlay.active{
