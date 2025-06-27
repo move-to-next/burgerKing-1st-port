@@ -11,13 +11,16 @@ $(function(){
         }
     })
     $(window).resize(function(){
-        if($(window).innerWidth() < 374){
-            $('.gnb-btn-mobile').click(function(){
-                console.log('ㅋㅋㅋㅋㅋ');
+        if($(window).innerWidth() > 370){
+            $('.gnb-btn-respon').click(function(){
+                $('nav.gnb').toggleClass('active');
+            })
+            $('.gnb-respon-top .close-btn').click(function(){
+                $('nav.gnb').removeClass('active');
             })
         }
-        else if($(window).innerWidth() > 374){
-            $('.gnb-btn-mobile').click(function(){
+        else if($(window).innerWidth() < 370){
+            $('.gnb-btn-respon').click(function(){
                 console.log('ㅋㅋㅋㅋㅋ');
             })
         }
@@ -113,13 +116,20 @@ $(function(){
         arrows:false
     })
 
-    $('.content-slide-wrap-mobile').slick({
+    $('.content-slide-wrap-respon').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 2000,
         speed:500,
         infinite:true
+    })
+
+    $('.story').click(function(){
+        $(this).children('.dropdown').stop().slideToggle(200);
+    })
+    $('.news').click(function(){
+        $(this).children('.dropdown').stop().slideToggle(200);
     })
 })
 
@@ -130,45 +140,80 @@ document.addEventListener("DOMContentLoaded", function(){
     let news = document.querySelector('.news');
     let newsDrop = document.querySelector('.news .news-menu');
     let sideFindStore = document.querySelector('.store-about>.find-store');
+    let resFindStore = document.querySelector('.respon-action-bar .find-store');
     let serviceFindStore = document.querySelector('.other-service>.find-store');
     let modalStoreFind = document.querySelector('.modal-find-store-overlay');
     let modalStoreMore = document.querySelector('.modal-store-more-overlay');
     let storeCard = document.querySelector('.modal-find-store .store-card');
     let modalFindClose = document.querySelector('.modal-find-store-overlay .modal-close-btn');
     let modalMoreClose = document.querySelector('.modal-store-more-overlay .modal-close-btn');
+    let modalStoreMoreRes = document.querySelector('.modal-store-more-overlay-respon');
+    let modalMoreCloseRes = document.querySelector('.store-more-close-btn');
 
     // GNB Menu Mouseover Event
-    story.addEventListener('mouseover', function(){
+    let storyAddActive = function(){
         storyDrop.classList.add('active');
-    });
-    story.addEventListener('mouseout', function(){
+    }
+    let storyRemoveActive = function(){
         storyDrop.classList.remove('active');
-    });
-    news.addEventListener('mouseover', function(){
+    }
+    let newsAddActive = function(){
         newsDrop.classList.add('active');
-    });
-    news.addEventListener('mouseout', function(){
+    }
+    let newsRemoveActive = function(){
         newsDrop.classList.remove('active');
-    });
+    }
+    let storyActive = function(){
+        storyDrop.classList.toggle('active');
+    }
+    let newsActive = function(){
+        newsDrop.classList.toggle('active');
+    }
+    if(window.innerWidth > 767){
+        story.addEventListener('mouseover', storyAddActive);
+        story.addEventListener('mouseout', storyRemoveActive);
+        news.addEventListener('mouseover', newsAddActive);
+        news.addEventListener('mouseout', newsRemoveActive);
+    }
+    else{
+        story.addEventListener('click', storyActive);
+        news.addEventListener('click', newsActive);
+    }
+
 
     // FindStore Click Event
-    sideFindStore.addEventListener("click", function(){
+    let openStoreFind = function(){
         modalStoreFind.classList.add('active');
-    })
-    serviceFindStore.addEventListener("click", function(){
-        modalStoreFind.classList.add('active');
-    })
-
-    storeCard.addEventListener("click", function(){
-        modalStoreMore.classList.add('active');
-    })
-
-    modalFindClose.addEventListener("click",function(){
+    }
+    let closeStoreFind = function(){
         modalStoreFind.classList.remove('active');
-    })
-    modalMoreClose.addEventListener("click",function(){
+    }
+    let openStoreMore = function(){
+        modalStoreMore.classList.add('active');
+    }
+    let closeStoreMore = function(){
         modalStoreMore.classList.remove('active');
-    })
+    }
+    let openStoreMoreRes = function(){
+        modalStoreMoreRes.classList.add('active');
+    }
+    let closeStoreMoreRes = function(){
+        modalStoreMoreRes.classList.remove('active');
+    }
+
+    sideFindStore.addEventListener("click", openStoreFind);
+    serviceFindStore.addEventListener("click", openStoreFind);
+    resFindStore.addEventListener("click", openStoreFind);
+    modalFindClose.addEventListener("click", closeStoreFind);
+    modalMoreClose.addEventListener("click",closeStoreMore);
+
+    if(window.innerWidth > 370){
+        storeCard.addEventListener("click", openStoreMoreRes);
+        modalMoreCloseRes.addEventListener("click",closeStoreMoreRes);
+    }
+    else{
+        storeCard.addEventListener("click", openStoreMore);
+    }
 
     let filmThums = document.querySelectorAll('.film-thum');
     let mainThums = document.querySelectorAll('.content-film-main-thum');
