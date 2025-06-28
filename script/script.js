@@ -127,9 +127,23 @@ $(function(){
 
     $('.story').click(function(){
         $(this).children('.dropdown').stop().slideToggle(200);
+        $('.story').toggleClass('active');
+        if($('li.story').hasClass('active')){
+        $('.story>div>.bi').css('rotate','180deg');
+        }
+        else{
+            $('.story>div>.bi').css('rotate','0deg');
+        }
     })
     $('.news').click(function(){
         $(this).children('.dropdown').stop().slideToggle(200);
+        $('.news').toggleClass('active');
+        if($('li.story').hasClass('active')){
+        $('.story>div>.bi').css('rotate','180deg');
+        }
+        else{
+            $('.story>div>.bi').css('rotate','0deg');
+        }
     })
 })
 
@@ -169,7 +183,7 @@ document.addEventListener("DOMContentLoaded", function(){
     let newsActive = function(){
         newsDrop.classList.toggle('active');
     }
-    if(window.innerWidth > 767){
+    if(window.innerWidth > 1024){
         story.addEventListener('mouseover', storyAddActive);
         story.addEventListener('mouseout', storyRemoveActive);
         news.addEventListener('mouseover', newsAddActive);

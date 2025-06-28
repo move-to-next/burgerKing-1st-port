@@ -151,14 +151,17 @@ header .header-inner{
 nav.gnb>ul>li{
     position: relative;
 }
-nav.gnb>ul>li>span{
+nav.gnb>ul>li>div>span{
     display: inline-block;
     font-family: var(--header);
     font-size: 24px;
     color: var(--dark-brown);
     padding: 25px 30px;
 }
-nav.gnb>ul>li:hover>span{
+nav.gnb>ul>li>div>.bi{
+    display: none;
+}
+nav.gnb>ul>li:hover>div>span{
     color: var(--orange-red);
 }
 nav.gnb>ul>li>.dropdown{

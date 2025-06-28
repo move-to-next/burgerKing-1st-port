@@ -12,30 +12,31 @@
         margin: auto;
     }
     .content-header{
-        line-height: 5px;
+        line-height: 8px;
         margin-bottom: 9px;
     }
     .content-header>h2{
-        font-size: 14px;
+        font-size: 16px;
         line-height: 14px;
     }
     .content-header>span{
-        font-size: 6px;
+        font-size: 8px;
     }
 
     .section-header{
         line-height: 5px;
     }
     .section-header>h2{
-        font-size: 12px;
+        font-size: 14px;
         line-height: 14px;
     }
     .section-header>span{
-        font-size: 5px;
+        font-size: 7px;
+        line-height: 10px;
         margin-top: 5px;
     }
     .section-header>span::after{
-        font-size: 4px;
+        font-size: 9px;
         padding: 3px;
     }
     /* #### GoToTop Button #### */
@@ -64,6 +65,9 @@
     button.gnb-btn-respon .bi{
         font-size: 20px;
         color: var(--dark-brown);
+    }
+    .main-page-container{
+        overflow: hidden;
     }
     .header-inner .header-wrap{
         align-items: center;
@@ -110,23 +114,33 @@
     nav.gnb>ul>li{
         border-bottom: 1px solid var(--light-brown);
     }
-    nav.gnb>ul>li>span{
+    nav.gnb>ul>li>div{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 25px;
+    }
+    nav.gnb>ul>li>div>span{
         position: relative;
+        display: block;
         font-family: var(--body);
         font-size: 15px;
         font-weight: 700;
-        display: block;
-        padding: 10px 25px;
+        padding: 0;
     }
-    :is(.story,.news)>span::after{
+    nav.gnb>ul>li>div>.bi{
+        display: inline-block;
+        font-size: 16px;
+    }
+    /* :is(.story,.news)>span::after{
         content: '\F282';
         position: absolute;
         right: 3%;
         display: inline-block;
         font-family: var(--bsfont);
         font-size: 12px;
-    }
-    nav.gnb>ul>li:hover>span{
+    } */
+    nav.gnb>ul>li:hover>div>span{
         color: var(--dark-brown);
     }
     nav.gnb>ul>li>.dropdown{
@@ -229,7 +243,7 @@
     }
     ul.banner-aside-wrap .slick-list .slick-track li.banner-aside-list{
         min-width: 600px;
-        min-height: 390px;
+        min-height: 34vh;
     }
     ul.banner-aside-wrap .progress-bar{
         display: none;
@@ -286,7 +300,7 @@
         justify-content: space-between;
         align-items: center;
         background-color: var(--dark-brown);
-        padding: 6px 10px;
+        padding: 15px 20px;
         border-radius: 5px;
     }
     .respon-action-bar .find-store .section-header>h2{
@@ -327,10 +341,10 @@
         padding: 48px;
     }
     .menu-card .menu-card-info>b{
-        font-size: 8px;
+        font-size: 10px;
     }
     .menu-card .menu-card-info>span{
-        font-size: 5px;
+        font-size: 7px;
     }
 
     .content-film-main .content-film-main-thum .video-thum{
@@ -402,6 +416,9 @@
         padding: 7px 15px;
         transform: translateY(3px);
         margin-right: 5px;
+    }
+    .delivery-service .section-header>span{
+        max-width: 154px;
     }
 
     /* ###### Section::Why-Burgerking ###### */
@@ -517,7 +534,7 @@
     }
     .app-burgerking-inner .app-overview{
         padding: 10px 20px;
-        gap: 30px;
+        gap: 15px;
     }
     .app-overview .text-box{
         min-width: 180px;
@@ -527,10 +544,10 @@
         justify-content: center;
     }
     .app-overview .text-box>span{
-        font-size: 8px;
+        font-size: 10px;
     }
     .app-overview .text-box>b{
-        font-size: 12px;
+        font-size: 14px;
         margin-top: 5px;
     }
     .app-overview .qrcode-applink .qrcode{
@@ -744,5 +761,25 @@
         color: var(--white);
         border-radius: 5px;
         padding: 5px 0;
+    }
+}
+
+/* [other tablet size] slide-banner sizes */
+@media(min-width: 768px) and (max-width: 800px){
+    ul.banner-aside-wrap .slick-list{
+        min-height: 34vh;
+    }
+    ul.banner-aside-wrap .slick-list .slick-track li.banner-aside-list{
+        min-width: 300px;
+        min-height: 34vh;
+    }
+}
+@media(min-width: 801px) and (max-width: 840px){
+    ul.banner-aside-wrap .slick-list{
+        min-height: 38vh;
+    }
+    ul.banner-aside-wrap .slick-list .slick-track li.banner-aside-list{
+        min-width: 300px;
+        min-height: 38vh;
     }
 }

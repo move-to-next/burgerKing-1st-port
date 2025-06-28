@@ -45,6 +45,10 @@
         right: -10vw;
     }
 
+    .main-page-container{
+        overflow: hidden;
+    }
+
     /* ###### Header ###### */
     header .store-about{
         display: none;
@@ -110,23 +114,33 @@
     nav.gnb>ul>li{
         border-bottom: 1px solid var(--light-brown);
     }
-    nav.gnb>ul>li>span{
+    nav.gnb>ul>li>div{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 25px;
+    }
+    nav.gnb>ul>li>div>span{
         position: relative;
+        display: block;
         font-family: var(--body);
         font-size: 15px;
         font-weight: 700;
-        display: block;
-        padding: 10px 25px;
+        padding: 0;
     }
-    :is(.story,.news)>span::after{
+    /* :is(.story,.news)>span::after{
         content: '\F282';
         position: absolute;
-        right: 10%;
+        right: 5%;
         display: inline-block;
         font-family: var(--bsfont);
         font-size: 12px;
+    } */
+    nav.gnb>ul>li>div>.bi{
+        display: inline-block;
+        font-size: 12px;
     }
-    nav.gnb>ul>li:hover>span{
+    nav.gnb>ul>li:hover>div>span{
         color: var(--dark-brown);
     }
     nav.gnb>ul>li>.dropdown{
@@ -224,12 +238,15 @@
     .banner-aside ul.banner-aside-wrap{
         margin-bottom: 0;
     }
-    .banner-aside ul.banner-aside-wrap .slick-dots{
+    ul.banner-aside-wrap .slick-dots{
         display: none !important;
+    }
+    ul.banner-aside-wrap .slick-list{
+        min-height: 22vh;
     }
     ul.banner-aside-wrap .slick-list .slick-track li.banner-aside-list{
         min-width: 300px;
-        min-height: 190px;
+        min-height: 22vh;
     }
     ul.banner-aside-wrap .progress-bar{
         display: none;
@@ -746,5 +763,43 @@
         color: var(--white);
         border-radius: 5px;
         padding: 5px 0;
+    }
+}
+
+/* [other mobile size] slide-banner sizes */
+@media(min-width: 375px) and (max-width: 413px){
+    ul.banner-aside-wrap .slick-list{
+        min-height: 27vh;
+    }
+    ul.banner-aside-wrap .slick-list .slick-track li.banner-aside-list{
+        min-width: 300px;
+        min-height: 27vh;
+    }
+}
+@media(min-width: 414px) and (max-width: 544px){
+    ul.banner-aside-wrap .slick-list{
+        min-height: 28vh;
+    }
+    ul.banner-aside-wrap .slick-list .slick-track li.banner-aside-list{
+        min-width: 300px;
+        min-height: 28vh;
+    }
+}
+@media(min-width: 545px) and (max-width: 719px){
+    ul.banner-aside-wrap .slick-list{
+        min-height: 32vh;
+    }
+    ul.banner-aside-wrap .slick-list .slick-track li.banner-aside-list{
+        min-width: 300px;
+        min-height: 32vh;
+    }
+}
+@media(min-width: 720px) and (max-width: 768px){
+    ul.banner-aside-wrap .slick-list{
+        min-height: 42vh;
+    }
+    ul.banner-aside-wrap .slick-list .slick-track li.banner-aside-list{
+        min-width: 300px;
+        min-height: 42vh;
     }
 }
