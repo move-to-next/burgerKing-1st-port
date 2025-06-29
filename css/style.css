@@ -263,7 +263,7 @@ nav.gnb>ul>li>.dropdown.active{
 /* #### Banner-Sidebar #### */
 .slide-banner-inner .banner-sidebar{
     min-width: 300px;
-    min-height: 650px;
+    max-height: 650px;
     border-radius: 10px;
     overflow: hidden;
 }
@@ -393,6 +393,7 @@ li.banner-aside-list>a>img{
     display: flex;
     gap: 10px;
     padding: 10px 0;
+    transform: translate3d(0px, 0px, 0px) !important;
 }
 .menu-card .menu-card-thum{
     position: relative;

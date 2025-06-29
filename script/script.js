@@ -10,21 +10,6 @@ $(function(){
             $('header').css('position', 'relative');
         }
     })
-    $(window).resize(function(){
-        if($(window).innerWidth() > 370){
-            $('.gnb-btn-respon').click(function(){
-                $('nav.gnb').toggleClass('active');
-            })
-            $('.gnb-respon-top .close-btn').click(function(){
-                $('nav.gnb').removeClass('active');
-            })
-        }
-        else if($(window).innerWidth() < 370){
-            $('.gnb-btn-respon').click(function(){
-                console.log('ㅋㅋㅋㅋㅋ');
-            })
-        }
-    }).resize();
     // Banner aside Slick-Slider
     const syncBarSlider = function(){
         let sideBars = document.querySelectorAll('.banner-sidebar-list');
@@ -74,6 +59,27 @@ $(function(){
     $('.banner-aside-wrap').on('beforeChange', function(){
         $('.progress-fill').css('width','0%');
     });
+    $(window).resize(function(){
+        if($(window).innerWidth() > 370){
+            $('.gnb-btn-respon').click(function(){
+                $('nav.gnb').toggleClass('active');
+            })
+            $('.gnb-respon-top .close-btn').click(function(){
+                $('nav.gnb').removeClass('active');
+            })
+        }
+        else if($(window).innerWidth() < 370){
+            $('.gnb-btn-respon').click(function(){
+                console.log('변경안됨');
+            })
+        }
+        // 디바운스 사용(연속되는 리사이즈가 멈추기전까지 resizeTimer 100밀리초마다 실행.)
+        let resizeTimer;
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function(){
+            $('.banner-aside-wrap').slick('setPosition');
+        },100);
+    }).resize();
 
     clickBarSlider();
     $('.banner-sidebar-wrap').slick({
@@ -158,7 +164,7 @@ document.addEventListener("DOMContentLoaded", function(){
     let serviceFindStore = document.querySelector('.other-service>.find-store');
     let modalStoreFind = document.querySelector('.modal-find-store-overlay');
     let modalStoreMore = document.querySelector('.modal-store-more-overlay');
-    let storeCard = document.querySelector('.modal-find-store .store-card');
+    let storeCard = document.querySelectorAll('.modal-find-store .store-card');
     let modalFindClose = document.querySelector('.modal-find-store-overlay .modal-close-btn');
     let modalMoreClose = document.querySelector('.modal-store-more-overlay .modal-close-btn');
     let modalStoreMoreRes = document.querySelector('.modal-store-more-overlay-respon');
@@ -221,13 +227,15 @@ document.addEventListener("DOMContentLoaded", function(){
     modalFindClose.addEventListener("click", closeStoreFind);
     modalMoreClose.addEventListener("click",closeStoreMore);
 
-    if(window.innerWidth > 370){
-        storeCard.addEventListener("click", openStoreMoreRes);
+    storeCard.forEach(function(el){
+        if(window.innerWidth < 1024){
+        el.addEventListener("click", openStoreMoreRes);
         modalMoreCloseRes.addEventListener("click",closeStoreMoreRes);
     }
     else{
-        storeCard.addEventListener("click", openStoreMore);
+        el.addEventListener("click", openStoreMore);
     }
+    })
 
     let filmThums = document.querySelectorAll('.film-thum');
     let mainThums = document.querySelectorAll('.content-film-main-thum');
