@@ -1,0 +1,9 @@
+section.why-burgerking
+		.why-burgerking-inner
+			.content-header
+				h2
+			.content-box-wrap
+				.content-box-items
+					(.content-box-item > a.hover-tooltip > span)*4
+				.content-box-items
+					(.content-box-item > a.hover-tooltip > span)*4

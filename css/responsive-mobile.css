@@ -2,7 +2,7 @@
 @import url(/css/variables.css);
 @import url(/css/reset.css);
 
-@media(min-width: 375px) and (max-width: 767px){
+@media(min-width: 374px) and (max-width: 767px){
     body{
         width: 100%;
     }
@@ -767,22 +767,22 @@
 }
 
 /* [other mobile size] slide-banner sizes */
-@media(min-width: 375px) and (max-width: 413px){
+@media(min-width: 350px) and (max-width: 413px){
     ul.banner-aside-wrap .slick-list{
-        min-height: 27vh;
+        min-height: 23vh;
     }
     ul.banner-aside-wrap .slick-list .slick-track li.banner-aside-list{
         min-width: 300px;
-        min-height: 27vh;
+        min-height: 23vh;
     }
 }
 @media(min-width: 414px) and (max-width: 544px){
     ul.banner-aside-wrap .slick-list{
-        min-height: 28vh;
+        min-height: 23vh;
     }
     ul.banner-aside-wrap .slick-list .slick-track li.banner-aside-list{
         min-width: 300px;
-        min-height: 28vh;
+        min-height: 23vh;
     }
 }
 @media(min-width: 545px) and (max-width: 719px){

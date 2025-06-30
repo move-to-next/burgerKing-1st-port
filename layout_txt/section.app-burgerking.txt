@@ -1,0 +1,21 @@
+section.app-burgerking
+		.app-burgerking-inner
+			.app-overview
+				.text-box
+					span
+					b
+				.qrcode-applink
+					.qrcode
+						img
+					.applink
+						a.play-store > img
+						a.app-store > img
+			.app-mockup
+				.mockup-btn
+					button.order
+					button.membership
+					button.coupon
+				.mockup-review
+					.order-review
+					.membership-review
+					.coupon-review

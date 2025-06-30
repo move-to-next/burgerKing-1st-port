@@ -1,0 +1,24 @@
+.main-page-container
+	header
+		.header-inner
+	section.slide-banner
+		.slide-banner-inner
+	section.highlight-section
+		.highlight-section-inner
+	section.service-section
+		.service-section-inner
+	section.why-burgerking
+		.why-burgerking-inner
+	section.info-burgerking
+		.info-burgerking-inner
+	section.app-burgerking
+		.app-burgerking-inner
+	aside.store-about
+		.find-store
+		.join-store
+	.modal-find-store-overlay
+		.modal-find-store
+		.modal-store-more-overlay
+	footer
+		.footer-top
+		.footer-inner

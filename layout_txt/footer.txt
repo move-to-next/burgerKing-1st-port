@@ -1,0 +1,19 @@
+footer
+	.footer-top
+		.footer-top-menu-wrap
+			a*5
+	.footer-inner
+		.footer-info
+			.logo
+				a > img
+			.company
+				span*5
+		.footer-social
+			button.recruit
+				span, font-icon
+			.sns
+				button.instagram
+				button.facebook
+				button.xsns
+				button.youtube
+				button.timhortons

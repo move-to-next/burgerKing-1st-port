@@ -1,0 +1,6 @@
+aside.store-about
+		.find-store
+			p
+			img
+		.join-store
+			span

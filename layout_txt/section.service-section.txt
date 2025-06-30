@@ -1,0 +1,18 @@
+section.service-section
+		.service-section-inner
+			.menu-service
+				.menu-info
+					.section-header
+						h2,span
+					span.section-text
+				.menu-category-wrap
+					(.menu-category-item > p,img)*3
+			.other-service
+				.find-store
+					.section-header
+						h2,span
+					img
+				.delivery-service
+					.section-header
+						h2,span
+					span

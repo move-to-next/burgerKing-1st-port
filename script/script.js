@@ -1,5 +1,6 @@
 // JQuery Slick-Slider
 $(function(){
+    // Scroll-Header Fixed
     $(window).scroll(function(){
         var scrollTop = $(this).scrollTop();
 
@@ -10,7 +11,7 @@ $(function(){
             $('header').css('position', 'relative');
         }
     })
-    // Banner aside Slick-Slider
+    // Slide-Banner Slick-Slider
     const syncBarSlider = function(){
         let sideBars = document.querySelectorAll('.banner-sidebar-list');
         let slickDots = document.querySelectorAll('.slick-dots > li');
@@ -22,9 +23,22 @@ $(function(){
             if(dot.classList.contains('slick-active')){
                 sideBars[index].classList.add('active');
                 $('.banner-sidebar-wrap').slick('slickGoTo', index);
+                // slide-dot이 active상태일때 sidebar도 active상태로 변경.
             }
         })
     };
+    $('.banner-sidebar-wrap').slick({
+        vertical: true,
+        slidesToShow: 10,
+        slidesToScroll: 10,
+        infinite: false,
+        arrows: false,
+        dots: false,
+        autoplay: false,
+        verticalSwiping: true,
+        speed: 500
+    })
+
     const clickBarSlider = function(){
         let sideBars = document.querySelectorAll('.banner-sidebar-list');
 
@@ -47,18 +61,7 @@ $(function(){
         adaptiveHeight: true
     })
     $('.banner-aside-wrap').on('afterChange', syncBarSlider);
-
-    $('.slick-dots').after('<div class="progress-bar"><div class="progress-fill"></div></div>');
-    const timeAnimation = function(){
-        $('.progress-fill').css('width','0%').animate({width: '100%'},3000);
-    };
-    timeAnimation();
-    $('.banner-aside-wrap').on('afterChange', function(){
-        timeAnimation();
-    });
-    $('.banner-aside-wrap').on('beforeChange', function(){
-        $('.progress-fill').css('width','0%');
-    });
+    // Mobile Responsive Slide-Banner Size
     $(window).resize(function(){
         if($(window).innerWidth() > 370){
             $('.gnb-btn-respon').click(function(){
@@ -73,28 +76,23 @@ $(function(){
                 console.log('변경안됨');
             })
         }
-        // 디바운스 사용(연속되는 리사이즈가 멈추기전까지 resizeTimer 100밀리초마다 실행.)
-        let resizeTimer;
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(function(){
-            $('.banner-aside-wrap').slick('setPosition');
-        },100);
     }).resize();
-
     clickBarSlider();
-    $('.banner-sidebar-wrap').slick({
-        vertical: true,
-        slidesToShow: 10,
-        slidesToScroll: 10,
-        infinite: false,
-        arrows: false,
-        dots: false,
-        autoplay: false,
-        verticalSwiping: true,
-        speed: 500
-    })
+    
+    // Slide-Banner Timebar
+    $('.slick-dots').after('<div class="progress-bar"><div class="progress-fill"></div></div>');
+    const timeAnimation = function(){
+        $('.progress-fill').css('width','0%').animate({width: '100%'},3000);
+    };
+    $('.banner-aside-wrap').on('afterChange', function(){
+        timeAnimation();
+    });
+    $('.banner-aside-wrap').on('beforeChange', function(){
+        $('.progress-fill').css('width','0%');
+    });
+    timeAnimation();
 
-    // Gototop Action
+    // Gototop Button Action
     $(window).scroll(function(){
         let scrollTop = $(this).scrollTop();
 
@@ -105,7 +103,6 @@ $(function(){
             $('.gototop').removeClass('active');
         }
     })
-
     $('.gototop').click(function(){
         $('html, body').animate({scrollTop: 0}, 500);
     })
@@ -113,15 +110,15 @@ $(function(){
     // What's new Slick-Slider
     $('.content-menu').slick({
         slidesToShow: 3,
-        slidesToScroll:1,
+        slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 2000,
-        speed:500,
-        infinite:true,
-        dots:false,
-        arrows:false
+        speed: 500,
+        infinite: true,
+        dots: false,
+        arrows: false
     })
-
+    // Info Burgerking
     $('.content-slide-wrap-respon').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -131,6 +128,7 @@ $(function(){
         infinite:true
     })
 
+    // Mobile GNB Menu Responsive
     $('.story').click(function(){
         $(this).children('.dropdown').stop().slideToggle(200);
         $('.story').toggleClass('active');

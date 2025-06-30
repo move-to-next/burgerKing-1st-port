@@ -1,0 +1,46 @@
+.modal-find-store-overlay
+	.modal-find-store
+		.modal-title
+			h2
+		.modal-search
+			input[type=search]
+			font-icon
+		.store-container
+			p.result-count
+			.store-card-wrap
+				.store-card
+					.store-info
+						p.store-title
+						p.store-detail
+						p.store-more
+					.store-visual
+						.store-thum
+						.membership
+		.button.close-modal
+			font-icon
+	.modal-store-more-overlay
+		.modal-store-more
+			.modal-header
+				h3
+				button.close-modal
+					font-icon
+			.modal-content
+				.store-detail
+					b.store-name
+					span.store-address
+						em > font-icon
+					span.store-tel
+				.store-image
+					img
+				.store-service
+					.service-time
+						.order-time
+							.title > font-icon, b
+							(dl > dt > dd > span)*4
+						.open-time
+							.title > font-icon, b
+							(dl > dt > dd > span)*4
+					.service-tag
+						.title > font-icon, b
+						.tag-wrap
+							span.tag-item*3
