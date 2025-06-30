@@ -776,13 +776,22 @@
         min-height: 23vh;
     }
 }
-@media(min-width: 414px) and (max-width: 544px){
+@media(min-width: 414px) and (max-width: 500px){
     ul.banner-aside-wrap .slick-list{
         min-height: 23vh;
     }
     ul.banner-aside-wrap .slick-list .slick-track li.banner-aside-list{
         min-width: 300px;
         min-height: 23vh;
+    }
+}
+@media(min-width: 501px) and (max-width: 544px){
+    ul.banner-aside-wrap .slick-list{
+        min-height: 38vh;
+    }
+    ul.banner-aside-wrap .slick-list .slick-track li.banner-aside-list{
+        min-width: 300px;
+        min-height: 38vh;
     }
 }
 @media(min-width: 545px) and (max-width: 719px){

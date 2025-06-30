@@ -774,7 +774,25 @@
         min-height: 34vh;
     }
 }
-@media(min-width: 801px) and (max-width: 840px){
+@media(min-width: 801px) and (max-width: 820px){
+    ul.banner-aside-wrap .slick-list{
+        min-height: 36vh;
+    }
+    ul.banner-aside-wrap .slick-list .slick-track li.banner-aside-list{
+        min-width: 300px;
+        min-height: 36vh;
+    }
+}
+@media(min-width: 821px) and (max-width: 840px){
+    ul.banner-aside-wrap .slick-list{
+        min-height: 38vh;
+    }
+    ul.banner-aside-wrap .slick-list .slick-track li.banner-aside-list{
+        min-width: 300px;
+        min-height: 38vh;
+    }
+}
+@media(min-width: 920px) and (max-width: 1024px){
     ul.banner-aside-wrap .slick-list{
         min-height: 38vh;
     }
