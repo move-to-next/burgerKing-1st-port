@@ -1,6 +1,6 @@
-@import url(/css/fonts.css);
-@import url(/css/variables.css);
-@import url(/css/reset.css);
+@import url(./css/fonts.css);
+@import url(./css/variables.css);
+@import url(./css/reset.css);
 
 @media(min-width: 374px) and (max-width: 767px){
     body{
@@ -206,7 +206,7 @@
     }
     .gnb-respon-top h2.logo a{
         display: inline-block;
-        background: url(/images/bg-logo.svg)no-repeat;
+        background: url(./images/bg-logo.svg)no-repeat;
         background-size: cover;
         background-position: left center;
         min-width: 120px;
