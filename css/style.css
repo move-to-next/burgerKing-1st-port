@@ -1,6 +1,6 @@
-@import url(./css/fonts.css);
-@import url(./css/variables.css);
-@import url(./css/reset.css);
+@import url(/css/fonts.css);
+@import url(/css/variables.css);
+@import url(/css/reset.css);
 
 body{
     background-color: var(--background);
@@ -110,7 +110,7 @@ header .header-inner{
 }
 .header-inner h1.logo a{
     display: inline-block;
-    background: url(./images/bg-logo.svg)no-repeat;
+    background: url(/images/bg-logo.svg)no-repeat;
     background-size: cover;
     background-position: left center;
     min-width: 200px;
@@ -563,7 +563,7 @@ li.banner-aside-list>a>img{
     display: flex;
     flex-direction: column;
     padding: 25px;
-    background: url(./images/menu-info.png)no-repeat;
+    background: url(/images/menu-info.png)no-repeat;
     background-position: 10% center;
     background-size: 250%;
     border-radius: 10px;
