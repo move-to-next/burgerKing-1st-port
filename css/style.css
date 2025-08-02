@@ -110,7 +110,7 @@ header .header-inner{
 }
 .header-inner h1.logo a{
     display: inline-block;
-    background: url(/images/bg-logo.svg)no-repeat;
+    background: url(../images/bg-logo.svg)no-repeat;
     background-size: cover;
     background-position: left center;
     min-width: 200px;
@@ -474,7 +474,7 @@ li.banner-aside-list>a>img{
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 45px;
-    background: url(./images/btn-play.svg);
+    background: url(../images/btn-play.svg);
     z-index: 100;
 }
 .video-thum>img{
@@ -563,7 +563,7 @@ li.banner-aside-list>a>img{
     display: flex;
     flex-direction: column;
     padding: 25px;
-    background: url(/images/menu-info.png)no-repeat;
+    background: url(../images/menu-info.png)no-repeat;
     background-position: 10% center;
     background-size: 250%;
     border-radius: 10px;
@@ -677,7 +677,7 @@ li.banner-aside-list>a>img{
 .delivery-service>.tel-number::before{
     content: '';
     display: inline-block;
-    background: url(./images/delivery.svg)no-repeat;
+    background: url(../images/delivery.svg)no-repeat;
     padding: 25px 50px;
     transform: translateY(15px);
 }
@@ -995,7 +995,7 @@ a.hover-tooltip>b{
     position: relative;
     transform: translateY(35px);
     padding: 250px 180px;
-    background: url(./images/smartphone-mockup.png) no-repeat;
+    background: url(../images/smartphone-mockup.png) no-repeat;
     background-size: cover;
 }
 .app-mockup .mockup-review>*{
@@ -1186,7 +1186,7 @@ footer .footer-inner{
 .footer-info .logo>a{
     display: block;
     padding: 15px 100px;
-    mask: url('./images/bg-logo.svg');
+    mask: url('../images/bg-logo.svg');
     mask-repeat: no-repeat;
     background-color: var(--light-brown);
 }
@@ -1238,19 +1238,19 @@ button.recruit>span::after{
     border: none;
 }
 .sns-btns>button.instagram{
-    background: url(./images/icon_sns_instagram.svg)no-repeat;
+    background: url(../images/icon_sns_instagram.svg)no-repeat;
     background-size: cover;
 }
 .sns-btns>button.facebook{
-    background: url(./images/icon_sns_facebook.svg)no-repeat;
+    background: url(../images/icon_sns_facebook.svg)no-repeat;
     background-size: cover;
 }
 .sns-btns>button.xsns{
-    background: url(./images/icon_sns_x.svg)no-repeat;
+    background: url(../images/icon_sns_x.svg)no-repeat;
     background-size: cover;
 }
 .sns-btns>button.youtube{
-    background: url(./images/icon_sns_youtube.svg)no-repeat;
+    background: url(../images/icon_sns_youtube.svg)no-repeat;
     background-size: cover;
     margin-right: 20px;
     position: relative;
@@ -1267,7 +1267,7 @@ button.recruit>span::after{
     transform: translate(16px, -50%);
 }
 .sns-btns>button.timhortons{
-    background: url(./images/icon_timhortons.svg)no-repeat;
+    background: url(../images/icon_timhortons.svg)no-repeat;
     background-size: cover;
 }
 .sns-btns>button>span{
