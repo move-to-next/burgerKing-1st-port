@@ -1,6 +1,6 @@
-@import url(/css/fonts.css);
-@import url(/css/variables.css);
-@import url(/css/reset.css);
+@import url(../css/fonts.css);
+@import url(../css/variables.css);
+@import url(../css/reset.css);
 
 body{
     background-color: var(--background);
