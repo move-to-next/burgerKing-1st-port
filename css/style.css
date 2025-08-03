@@ -157,6 +157,8 @@ nav.gnb>ul>li>div>span{
     font-size: 24px;
     color: var(--dark-brown);
     padding: 25px 30px;
+    cursor: pointer;
+    user-select: none;
 }
 nav.gnb>ul>li>div>.bi{
     display: none;
